@@ -24,18 +24,4 @@ export const categories = [
     title: "Pomodoro collection été 2021",
     cat: "tshirt",
   },
-
-  {
-    id: 4,
-    img: "https://pomodoro.store/wp-content/uploads/2022/05/img_1040-1-scaled.jpeg",
-    title: "POMODORO CARDIGAN",
-    cat: "cardigan",
-  },
-
-  {
-    id: 4,
-    img: "https://pomodoro.store/wp-content/uploads/2022/05/img_1040-1-scaled.jpeg",
-    title: "POMODORO CARDIGAN",
-    cat: "cardigan",
-  },
 ];
