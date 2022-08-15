@@ -21,7 +21,6 @@ mongoose
     console.log(err);
   });
 
-//app can consume json data
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
