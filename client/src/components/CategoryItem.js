@@ -44,7 +44,7 @@ const CategoryItem = ({ item }) => {
         <Info>
           <Title>{item.title}</Title>
           <Link
-            to="/shop"
+            to={`/products/${item.cat}`}
             className="inline-block text-center bg-black rounded py-3 px-8 font-medium text-white hover:bg-red-700"
           >
             Pomodoro Collection
