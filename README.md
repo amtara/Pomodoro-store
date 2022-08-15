@@ -18,4 +18,4 @@ In the project directory, you can run: Npm i to install all dependencies for the
 ### `npm start`
 
 Runs the backend server by npm start
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:5006) to view it in your browser.
