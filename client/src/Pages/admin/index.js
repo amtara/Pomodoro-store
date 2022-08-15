@@ -51,7 +51,7 @@ export default function Admin() {
                   className={classNames(
                     current == item.href
                       ? "bg-red-800 text-white"
-                      : "text-indigo-100 hover:bg-red-800 hover:text-white",
+                      : "text-white hover:bg-red-800 hover:text-white",
                     "group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
@@ -60,7 +60,7 @@ export default function Admin() {
                     className={classNames(
                       item.current
                         ? "text-white"
-                        : "text-indigo-300 group-hover:text-white",
+                        : "text-white group-hover:text-white",
                       "h-6 w-6"
                     )}
                     aria-hidden="true"
@@ -120,7 +120,6 @@ export default function Admin() {
                           className="h-6 w-6 text-white"
                           aria-hidden="true"
                         />
-                        <span className="sr-only">Close sidebar</span>
                       </button>
                     </div>
                   </Transition.Child>
@@ -172,18 +171,14 @@ export default function Admin() {
             <div className="relative z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 shadow-sm flex">
               <button
                 type="button"
-                className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
+                className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500 md:hidden"
                 onClick={() => setMobileMenuOpen(true)}
               >
-                <span className="sr-only">Open sidebar</span>
                 <MenuAlt2Icon className="h-6 w-6" aria-hidden="true" />
               </button>
               <div className="flex-1 flex justify-between px-4 sm:px-6">
                 <div className="flex-1 flex">
                   <form className="w-full flex md:ml-0" action="#" method="GET">
-                    <label htmlFor="search-field" className="sr-only">
-                      Search all files
-                    </label>
                     <div className="relative w-full text-gray-400 focus-within:text-gray-600">
                       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center">
                         <SearchIcon
@@ -204,7 +199,7 @@ export default function Admin() {
                 <div className="ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6">
                   <Menu as="div" className="relative flex-shrink-0">
                     <div>
-                      <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
