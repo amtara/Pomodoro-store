@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Product from "./Product";
+import { popularProducts } from "../data";
 import axios from "axios";
+const Container = styled.div`
+  padding: 20px;
+`;
 
-const Products = ({ cat, filters }) => {
+const Products = ({ cat, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProduct, setFilteredProduct] = useState([]);
   const [error, setError] = useState(false);
@@ -38,7 +42,7 @@ const Products = ({ cat, filters }) => {
   }, [products, cat, filters]);
 
   return (
-    <div className="px-4 py-10">
+    <Container>
       <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {cat
           ? filteredProduct.map((item) => <Product item={item} key={item.id} />)
@@ -46,7 +50,7 @@ const Products = ({ cat, filters }) => {
               .slice(0, 4)
               .map((product) => <Product item={product} key={product.id} />)}
       </div>
-    </div>
+    </Container>
   );
 };
 

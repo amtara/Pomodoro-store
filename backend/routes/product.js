@@ -27,6 +27,21 @@ router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
+router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
+  try {
+    const updateProduct = await Product.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    res.status(200).json(updateProduct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //delete avec  l'id du produit
 
 router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
@@ -50,7 +65,7 @@ router.get("/find/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   // creation d'une categorie(parametre d'url)
-  const cat = req.query.cat;
+  const cat = req.query.category;
   try {
     let products;
 

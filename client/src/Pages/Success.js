@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Promotion from "../components/Promotion";
 import { Link } from "react-router-dom";
-function Success({ stripeToken }) {
+function Success() {
   const location = useLocation();
   console.log(location);
   return (
@@ -22,7 +22,7 @@ function Success({ stripeToken }) {
           to="/shop"
           className="inline-block text-center bg-black rounded py-3 px-8 font-medium text-white hover:bg-red-700"
         >
-          Shop Collection
+          Pomodoro Collection
         </Link>
       </div>
       <Footer />

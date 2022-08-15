@@ -93,7 +93,7 @@ export default function Pomodoro() {
                   to="/shop"
                   className="inline-block text-center bg-black rounded py-3 px-8 font-medium text-white hover:bg-red-700"
                 >
-                  Shop Collection
+                  Pomodoro Collection
                 </Link>
               </div>
             </div>

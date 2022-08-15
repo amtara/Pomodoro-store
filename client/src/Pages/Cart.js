@@ -84,7 +84,6 @@ const Image = styled.img`
   width: 150px;
   height: 150px;
   object-fit: cover;
-
   @media ${device.mobile} {
     width: 70px;
     height: 70px;
@@ -128,7 +127,6 @@ const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-
   @media ${device.tablet} {
     margin-bottom: 0px;
   }
@@ -201,6 +199,7 @@ const Cart = () => {
 
   useEffect(() => {
     const requestStripe = async () => {
+      console.log("stripeTok", stripeTok);
       const orderData = {
         user: {
           email: stripeTok.email,
@@ -220,7 +219,7 @@ const Cart = () => {
           tokenId: stripeTok.id,
           amount: cart.total * 100,
         });
-
+        const createOrder = await publicRequest.post("/orders", orderData);
         history("/success", { data: res.data });
       } catch (errors) {
         console.log(errors);
@@ -228,9 +227,8 @@ const Cart = () => {
     };
     stripeTok && requestStripe();
   }, [stripeTok, cart.total, history]);
-  console.log(cart.product);
 
-  const maka = cart.products.forEach((element) => console.log(element));
+  // const testData = cart.products.forEach((element) => console.log(element));
 
   return (
     <Container>

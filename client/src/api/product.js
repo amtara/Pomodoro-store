@@ -1,5 +1,5 @@
 import { getProducts } from "../redux/admin/productSlice";
-import { publicRequest, userRequest } from "../utils/requestMethod";
+import { publicRequest, adminRequest } from "../utils/requestMethod";
 
 /**
  * api create product db
@@ -8,7 +8,7 @@ import { publicRequest, userRequest } from "../utils/requestMethod";
  */
 export const add_product = async (data, { dispatch }) => {
   try {
-    const resp = await userRequest.post("products/", data);
+    const resp = await adminRequest.post("products/", data);
     console.log("resp", resp);
     dispatch(getProducts());
     return resp.data;
@@ -26,7 +26,7 @@ export const add_product = async (data, { dispatch }) => {
 export const update_product = async (data) => {
   console.log("data", data);
   try {
-    const resp = await userRequest.put(`products/${data.id}`, data);
+    const resp = await adminRequest.put(`products/${data.id}`, data);
     console.log("resp update", resp);
     return resp.data;
   } catch (err) {
@@ -54,7 +54,7 @@ export const get_all_product = async () => {
  */
 export const delete_product = async (productId, { dispatch }) => {
   try {
-    const resp = await userRequest.delete(`products/${productId}`);
+    const resp = await adminRequest.delete(`products/${productId}`);
     dispatch(getProducts());
     return resp.data;
   } catch (err) {

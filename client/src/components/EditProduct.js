@@ -2,8 +2,6 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
-
-import { CheckIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearDataUpdateProduct,

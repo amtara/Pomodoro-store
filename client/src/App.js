@@ -14,9 +14,7 @@ import Admin from "./Pages/admin";
 import Dashboard from "./Pages/admin/Dashboard";
 import Command from "./Pages/admin/Command";
 import Products from "./Pages/admin/Products";
-import Users from "./Pages/admin/Users";
-import { Provider, useSelector } from "react-redux";
-import { userSelector } from "./redux/authSlice";
+
 import { useEffect, useState } from "react";
 import AllProduct from "./components/AllProduct";
 import Faq from "./components/Faq";
@@ -57,7 +55,6 @@ function App() {
           <Route index element={<Dashboard />} />
           <Route path="products" element={<Products />} />
           <Route path="command" element={<Command />} />
-          <Route path="users" element={<Users />} />
         </Route>
       </Routes>
     </Router>

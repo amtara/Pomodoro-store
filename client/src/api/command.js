@@ -1,5 +1,5 @@
 import { getProducts } from "../redux/admin/productSlice";
-import { userRequest } from "../utils/requestMethod";
+import { adminRequest } from "../utils/requestMethod";
 
 /**
  * api get all product db
@@ -7,7 +7,7 @@ import { userRequest } from "../utils/requestMethod";
  */
 export const get_all_order = async () => {
   try {
-    const resp = await userRequest.get("orders/");
+    const resp = await adminRequest.get("orders/");
     return resp.data;
   } catch (err) {
     return err.message;

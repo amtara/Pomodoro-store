@@ -12,15 +12,26 @@ const ProductList = () => {
 
   const cat = location.pathname.split("/")[2];
   const [filters, setFilters] = useState({});
+  const [sort, setSort] = useState({});
+
+  const Container = styled.div``;
+  const handleFilters = (e) => {
+    const value = e.target.value;
+    console.log(value);
+    setFilters({
+      ...filters,
+      [e.target.name]: value,
+    });
+  };
 
   return (
-    <div>
+    <Container>
       <Navbar />
       <Promotion tile="bénéficier d'une reduction de 20 %" />
 
-      <Products cat={cat} filters={filters} />
+      <Products cat={cat} filters={filters} sort={sort} />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

@@ -15,15 +15,13 @@ const ImgContainer = styled.div`
   flex: 1;
 `;
 
-const Container = styled.div``;
-
 const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
 `;
 
-const InfoContainer = styled.div`
+const Info = styled.div`
   flex: 1;
   padding: 10px 30px;
 `;
@@ -39,7 +37,7 @@ const Price = styled.span`
   font-size: 40px;
 `;
 
-const FilterContainer = styled.div`
+const ContentProduct = styled.div`
   width: 50%;
   margin: 30px 0px;
   display: flex;
@@ -56,7 +54,7 @@ const FilterTitle = styled.span`
   font-weight: 200;
 `;
 
-const FilterColor = styled.div`
+const ColorShow = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -65,19 +63,19 @@ const FilterColor = styled.div`
   cursor: pointer;
 `;
 
-const FilterSize = styled.select`
+const FSize = styled.select`
   margin-left: 10px;
   padding: 5px;
 `;
 
-const FilterSizeOption = styled.option``;
+const Option = styled.option``;
 
-const AddContainer = styled.div`
+const AddProduct = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const AmountContainer = styled.div`
+const IncreaseD = styled.div`
   display: flex;
   align-items: center;
   font-weight: 700;
@@ -85,7 +83,7 @@ const AmountContainer = styled.div`
   padding: 0px 15px 1px;
 `;
 
-const Amount = styled.span`
+const Quantity = styled.span`
   width: 50px;
   height: 50px;
 
@@ -142,14 +140,14 @@ const Product = () => {
   };
 
   return (
-    <Container>
+    <div>
       <Navbar />
       <Promotion tile="bénéficier d'une reduction de 20 %" />
       <div className="xl:flex xl:justify-center">
         <div className="flex flex-col md:flex-row p-[0px] xl:w-[1200px] my-[50px]">
           <div className="md:flex-col gap-y-[20px] mr-[20px] hidden md:flex">
             {Array.isArray(product?.img) &&
-              product?.img.map((item, index) => (
+              product?.img.map((item) => (
                 <div onClick={() => setImage(item)}>
                   <img
                     src={item}
@@ -164,32 +162,32 @@ const Product = () => {
               <Image src={image ? image : product?.img[0]} />
             )}
           </ImgContainer>
-          <InfoContainer>
+          <Info>
             <h1 className="text-4xl sm:mt-0 mt-10">{product.title}</h1>
             <Desc>{product.desc}</Desc>
             <Price>CHF {product.price}.-</Price>
-            <FilterContainer>
+            <ContentProduct>
               <Filter>
                 <FilterTitle>Couleur</FilterTitle>
                 {product.color?.map((c) => (
-                  <FilterColor color={c} key={c} onClick={() => setColor(c)} />
+                  <ColorShow color={c} key={c} onClick={() => setColor(c)} />
                 ))}
               </Filter>
               <Filter>
                 <FilterTitle>Taille</FilterTitle>
-                <FilterSize onChange={(e) => setSize(e.target.value)}>
+                <FSize onChange={(e) => setSize(e.target.value)}>
                   {product.size?.map((size) => (
-                    <FilterSizeOption key={size}>{size}</FilterSizeOption>
+                    <Option key={size}>{size}</Option>
                   ))}
-                </FilterSize>
+                </FSize>
               </Filter>
-            </FilterContainer>
-            <AddContainer>
-              <AmountContainer>
+            </ContentProduct>
+            <AddProduct>
+              <IncreaseD>
                 <Remove fontSize="2" onClick={() => handleQuantity("inc")} />
-                <Amount>{quantity}</Amount>
+                <Quantity>{quantity}</Quantity>
                 <Add fontSize="2" onClick={() => handleQuantity("des")} />
-              </AmountContainer>
+              </IncreaseD>
               <button
                 className={`${
                   disable
@@ -203,13 +201,13 @@ const Product = () => {
               <Link to="/cart">
                 <ToastContainer />
               </Link>
-            </AddContainer>
-          </InfoContainer>
+            </AddProduct>
+          </Info>
         </div>
       </div>
 
       <Footer />
-    </Container>
+    </div>
   );
 };
 

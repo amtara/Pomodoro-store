@@ -31,16 +31,11 @@ const Info = styled.div`
 `;
 const Title = styled.div`
   color: white;
+  font-size: 2rem;
+  text-align: center;
   margin-bottom: 20px;
 `;
-const Button = styled.button`
-  padding: 10px;
-  border: none;
-  color: gray;
-  background-color: #;
-  cursor: pointer;
-  font-weight: 600;
-`;
+
 const CategoryItem = ({ item }) => {
   return (
     <Container>
@@ -48,7 +43,12 @@ const CategoryItem = ({ item }) => {
         <Image src={item.img} />
         <Info>
           <Title>{item.title}</Title>
-          <Button>Voir la catégories</Button>
+          <Link
+            to="/shop"
+            className="inline-block text-center bg-black rounded py-3 px-8 font-medium text-white hover:bg-red-700"
+          >
+            Pomodoro Collection
+          </Link>
         </Info>
       </Link>
     </Container>

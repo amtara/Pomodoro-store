@@ -150,13 +150,6 @@ const AddProduct = ({ isVisible, onOpen }) => {
                             className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             placeholder="Your description..."
                           ></textarea>
-                          {/* <Editor
-                            editorState={editorState}
-                            toolbarClassName="toolbarClassName"
-                            wrapperClassName="wrapperClassName"
-                            editorClassName="border border-indigo-600"
-                            onEditorStateChange={updateTextDescription}
-                          /> */}
                         </div>
                         <div className="col-span-6">
                           <label

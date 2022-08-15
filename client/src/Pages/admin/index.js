@@ -37,7 +37,10 @@ export default function Admin() {
         <div className="hidden w-28 bg-neutral-900 overflow-y-auto md:block">
           <div className="w-full py-6 flex flex-col items-center">
             <div className="flex-shrink-0 flex items-center">
-              <img className="h-8 w-auto" src="ddss" />
+              <img
+                className="h-8 w-auto"
+                src="https://test-pomodoro.hm-dev.com/wp-content/uploads/2020/08/image1-removebg-preview-e1597251215323.png"
+              />
             </div>
             <div className="flex-1 mt-6 w-full px-2 space-y-1">
               {sidebarNavigation.map((item) => (
@@ -69,7 +72,6 @@ export default function Admin() {
           </div>
         </div>
 
-        {/* Mobile menu */}
         <Transition.Root show={mobileMenuOpen} as={Fragment}>
           <Dialog
             as="div"
@@ -98,7 +100,7 @@ export default function Admin() {
                 leaveFrom="translate-x-0"
                 leaveTo="-translate-x-full"
               >
-                <Dialog.Panel className="relative max-w-xs w-full bg-indigo-700 pt-5 pb-4 flex-1 flex flex-col">
+                <Dialog.Panel className="relative max-w-xs w-full bg-black pt-5 pb-4 flex-1 flex flex-col">
                   <Transition.Child
                     as={Fragment}
                     enter="ease-in-out duration-300"
@@ -125,8 +127,7 @@ export default function Admin() {
                   <div className="flex-shrink-0 px-4 flex items-center">
                     <img
                       className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
-                      alt="Workflow"
+                      src="https://test-pomodoro.hm-dev.com/wp-content/uploads/2020/08/image1-removebg-preview-e1597251215323.png"
                     />
                   </div>
                   <div className="mt-5 flex-1 h-0 px-2 overflow-y-auto">
@@ -139,7 +140,7 @@ export default function Admin() {
                             className={classNames(
                               item.current
                                 ? "bg-red-800 text-white"
-                                : "text-indigo-100 hover:bg-red-800 hover:text-white",
+                                : "text-white hover:bg-red-800 hover:text-white",
                               "group py-2 px-3 rounded-md flex items-center text-sm font-medium"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -148,7 +149,7 @@ export default function Admin() {
                               className={classNames(
                                 item.current
                                   ? "text-white"
-                                  : "text-indigo-300 group-hover:text-white",
+                                  : "text-white group-hover:text-white",
                                 "mr-3 h-6 w-6"
                               )}
                               aria-hidden="true"
@@ -161,14 +162,11 @@ export default function Admin() {
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
-              <div className="flex-shrink-0 w-14" aria-hidden="true">
-                {/* Dummy element to force sidebar to shrink to fit close icon */}
-              </div>
+              <div className="flex-shrink-0 w-14" aria-hidden="true"></div>
             </div>
           </Dialog>
         </Transition.Root>
 
-        {/* Content area */}
         <div className="flex-1 flex flex-col overflow-hidden">
           <header className="w-full">
             <div className="relative z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 shadow-sm flex">
@@ -204,7 +202,6 @@ export default function Admin() {
                   </form>
                 </div>
                 <div className="ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6">
-                  {/* Profile dropdown */}
                   <Menu as="div" className="relative flex-shrink-0">
                     <div>
                       <Menu.Button className="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
@@ -245,17 +242,12 @@ export default function Admin() {
             </div>
           </header>
 
-          {/* Main content */}
           <div className="flex-1 flex items-stretch overflow-hidden">
             <main className="flex-1 overflow-y-auto">
-              {/* Primary column */}
               <section
                 aria-labelledby="primary-heading"
                 className="min-w-0 flex-1 h-full flex flex-col lg:order-last"
               >
-                <h1 id="primary-heading" className="sr-only">
-                  Photos
-                </h1>
                 <Outlet />
               </section>
             </main>
