@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Promotion from "../components/Promotion";
 import { Link } from "react-router-dom";
-function Success() {
+function ConfirmationPage() {
   const location = useLocation();
   console.log(location);
   return (
@@ -30,4 +30,4 @@ function Success() {
   );
 }
 
-export default Success;
+export default ConfirmationPage;

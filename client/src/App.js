@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 import AllProduct from "./components/AllProduct";
 import Faq from "./components/Faq";
 import Pomodoro from "./components/Pomodoro";
-import Success from "./Pages/Success";
+import ConfirmationPage from "./Pages/ConfirmationPage";
 function App() {
   const [user, setUser] = useState({});
 
@@ -42,7 +42,7 @@ function App() {
         <Route path="/shop" element={<AllProduct />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/pomodoro" element={<Pomodoro />} />
-        <Route path="/success" element={<Success />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
 
         <Route
           path="/login"

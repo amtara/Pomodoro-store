@@ -220,7 +220,7 @@ const Cart = () => {
           amount: cart.total * 100,
         });
         const createOrder = await publicRequest.post("/orders", orderData);
-        history("/success", { data: res.data });
+        history("/confirmation", { data: res.data });
       } catch (errors) {
         console.log(errors);
       }
