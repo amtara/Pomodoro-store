@@ -5,7 +5,6 @@ const dotenv = require("dotenv");
 const userRoute = require("../backend/routes/user");
 const authRoute = require("../backend/routes/auth");
 const productRoute = require("../backend/routes/product");
-
 const stripeRoute = require("../backend/routes/stripe");
 const OrderRoute = require("../backend/routes/order");
 const bodyParser = require("body-parser");
