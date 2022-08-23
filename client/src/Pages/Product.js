@@ -106,7 +106,7 @@ const Product = () => {
   useEffect(() => {
     const getProducts = () => {
       publicRequest
-        .get("http://localhost:5006/api/products/find/" + id)
+        .get("http://localhost:5007/api/products/find/" + id)
         .then((res) => {
           setProduct(res.data);
         })

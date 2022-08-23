@@ -14,24 +14,17 @@ const ProductList = () => {
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState({});
 
-  const Container = styled.div``;
-  const handleFilters = (e) => {
-    const value = e.target.value;
-    console.log(value);
-    setFilters({
-      ...filters,
-      [e.target.name]: value,
-    });
-  };
+
+ 
 
   return (
-    <Container>
+    <div>
       <Navbar />
       <Promotion tile="bénéficier d'une reduction de 20 %" />
 
       <Products cat={cat} filters={filters} sort={sort} />
       <Footer />
-    </Container>
+    </div>
   );
 };
 
