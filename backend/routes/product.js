@@ -3,7 +3,7 @@ const { verifyTokenAndAdmin } = require("../middleware/verificationToken");
 const Product = require("../models/Product");
 
 // Creation d'un nouveau produit
-router.post("/", verifyTokenAndAdmin, async (req, res) => {
+router.post("/", async (req, res) => {
   const newProduct = new Product(req.body);
   try {
     const savedProduct = await newProduct.save();
