@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 function tokenVerification(req, res, next) {
   //recuperation du token dans le header
   const headerToken = req.headers.authorization;
-
+  console.log(headerToken);
   if (headerToken) {
     // verification que le token est valide
     const token = headerToken.split(" ")[1];
